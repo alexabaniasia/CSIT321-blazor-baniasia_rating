@@ -1,63 +1,72 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EntryPointFilePath = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Hearthstone
 build_property.RootNamespace = Hearthstone
-build_property.ProjectDir = Z:\L23Y16W36\Hearthstone\Hearthstone\
+build_property.ProjectDir = C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = Z:\L23Y16W36\Hearthstone\Hearthstone
+build_property.MSBuildProjectDirectory = C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[Z:/L23Y16W36/Hearthstone/Hearthstone/Components/App.razor]
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/L23Y16W36/Hearthstone/Hearthstone/Components/Pages/AuthLayout.razor]
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/AuthLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/L23Y16W36/Hearthstone/Hearthstone/Components/Pages/FormField.razor]
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/FormField.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGb3JtRmllbGQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/L23Y16W36/Hearthstone/Hearthstone/Components/Pages/Home.razor]
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/L23Y16W36/Hearthstone/Hearthstone/Components/Pages/Icon.razor]
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/Icon.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJY29uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/L23Y16W36/Hearthstone/Hearthstone/Components/Pages/Login.razor]
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/L23Y16W36/Hearthstone/Hearthstone/Components/Pages/Register.razor]
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/Register.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWdpc3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/L23Y16W36/Hearthstone/Hearthstone/Components/Pages/Ui.razor]
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/Reviews.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZXZpZXdzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/Ui.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVaS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/L23Y16W36/Hearthstone/Hearthstone/Components/Routes.razor]
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/L23Y16W36/Hearthstone/Hearthstone/Components/_Imports.razor]
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/L23Y16W36/Hearthstone/Hearthstone/Components/Layout/MainLayout.razor]
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-nu6c5o7ju5

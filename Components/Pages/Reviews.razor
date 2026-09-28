@@ -1,0 +1,298 @@
+@page "/reviews"
+@rendermode InteractiveServer
+
+<PageTitle>Hearthstone — Ratings &amp; Reviews</PageTitle>
+<HeadContent>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</HeadContent>
+
+<div id="top" class="min-h-screen bg-white text-[#241812]" style="font-family:'Montserrat',sans-serif">
+
+<!-- ===================== HEADER ===================== -->
+<header class="sticky top-0 z-40 border-b border-[#241812]/5 bg-white/80 backdrop-blur">
+  <div class="@Ui.Wrap flex h-[72px] items-center justify-between">
+    <a href="/" class="text-dark flex items-center gap-2 text-[19px] font-bold">
+      <span class="h-4 w-[18px] bg-[#241812] [clip-path:polygon(50%_0%,100%_38%,100%_100%,0%_100%,0%_38%)]"></span>Hearthstone
+    </a>
+    <div class="flex items-center gap-2">
+      <a href="/" class="hidden px-3 py-2 text-sm font-semibold text-[#241812]/70 transition hover:text-[#241812] sm:block">Home</a>
+      <a href="/login" class="hidden px-3 py-2 text-sm font-semibold text-[#241812] transition hover:text-[#c8703a] sm:block">Sign in</a>
+      <a href="/register" class="@Ui.BtnDarkSm">Sign up</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO / SUMMARY ===================== -->
+<section class="bg-amber-50/50 pb-16 pt-12 lg:pt-16">
+  <div class="@Ui.Wrap">
+    <div class="mb-3 text-[13px] font-bold text-[#c8703a]">Ratings &amp; reviews</div>
+    <h1 class="@Ui.H2 max-w-[620px]">Tell us how Hearthstone made you feel at home</h1>
+    <p class="@Ui.Muted mt-3.5 max-w-[480px]">Rate your experience and leave a comment. Your feedback helps other buyers and helps our team keep getting better.</p>
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-[1fr_1.4fr]">
+
+      <!-- Average + distribution -->
+      <div class="rounded-2xl bg-[#e7d3bc] p-6 sm:p-8">
+        <div class="flex items-center gap-5">
+          <div class="text-[56px] font-extrabold leading-none">@(reviews.Count == 0 ? "–" : Average.ToString("0.0"))</div>
+          <div>
+            <div class="flex gap-0.5 text-[#c8703a]">
+              @for (var i = 1; i <= 5; i++)
+              {
+                <Icon Name="star" Fill="@(i <= Math.Round(Average))" Class="size-5" />
+              }
+            </div>
+            <div class="mt-1 text-[13px] font-medium text-[#6b5d52]">Based on @reviews.Count @(reviews.Count == 1 ? "review" : "reviews")</div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-col gap-2.5">
+          @for (var s = 5; s >= 1; s--)
+          {
+            var star = s;
+            var count = reviews.Count(r => r.Rating == star);
+            var pct = reviews.Count == 0 ? 0 : count * 100 / reviews.Count;
+            <button type="button" @onclick="() => FilterStar = FilterStar == star ? 0 : star"
+                    aria-pressed="@(FilterStar == star ? "true" : "false")"
+                    class="group flex items-center gap-3 rounded-lg px-2 py-1 text-[13px] font-semibold transition hover:bg-white/50 @(FilterStar == star ? "bg-white/70" : "")">
+              <span class="flex w-6 items-center gap-1">@star<Icon Name="star" Fill="true" Class="size-3 text-[#c8703a]" /></span>
+              <span class="h-2 flex-1 overflow-hidden rounded-full bg-[#241812]/10"><span class="block h-full rounded-full bg-[#241812] transition-all group-hover:bg-[#c8703a]" style="width:@(pct)%"></span></span>
+              <span class="w-6 text-right text-[#6b5d52]">@count</span>
+            </button>
+          }
+        </div>
+      </div>
+
+      <!-- Write a review -->
+      <div class="rounded-2xl bg-[#ddc4ac] p-6 shadow-[0_24px_50px_-28px_rgba(36,24,18,0.55)] sm:p-8">
+        @if (submitted)
+        {
+          <div class="py-8 text-center" role="status">
+            <span class="mx-auto grid size-14 place-items-center rounded-full bg-[#241812] text-white"><Icon Name="check" Class="size-7" /></span>
+            <h2 class="mt-4 text-xl font-extrabold">Thanks for your review!</h2>
+            <p class="mt-1.5 text-sm font-medium text-[#6b5d52]">Your rating and comment now appear below.</p>
+            <button type="button" class="@Ui.BtnDark mt-6" @onclick="() => submitted = false">Write another review</button>
+          </div>
+        }
+        else
+        {
+          <h2 class="mb-6 text-xl font-extrabold">Write a review</h2>
+          <form @onsubmit="Submit" novalidate>
+
+            <!-- Star picker -->
+            <div class="mb-5">
+              <span class="@Ui.Label" id="rating-label">Your rating</span>
+              <div class="flex flex-wrap items-center gap-3">
+                <div class="flex gap-1" role="radiogroup" aria-labelledby="rating-label" @onmouseleave="() => hover = 0">
+                  @for (var i = 1; i <= 5; i++)
+                  {
+                    var n = i;
+                    <button type="button" role="radio" aria-checked="@(rating == n ? "true" : "false")" aria-label="@n @(n == 1 ? "star" : "stars")"
+                            @onclick="() => rating = n" @onmouseover="() => hover = n"
+                            class="rounded-md p-0.5 text-[#c8703a] transition hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c8703a]">
+                      <Icon Name="star" Fill="@(n <= (hover > 0 ? hover : rating))" Class="size-8" />
+                    </button>
+                  }
+                </div>
+                <span class="text-[13.5px] font-semibold text-[#6b5d52]" aria-live="polite">@(Labels[hover > 0 ? hover : rating])</span>
+              </div>
+              @if (Err("rating") is { } re)
+              {
+                <p class="mt-1.5 text-[12.5px] font-medium text-red-700" role="alert">@re</p>
+              }
+            </div>
+
+            <FormField Id="rv-name" Label="Your name" Placeholder="e.g. Jamie Cruz" Autocomplete="name" @bind-Value="name" Error="@Err("name")" />
+
+            <div class="mb-5">
+              <label class="@Ui.Label" for="rv-comment">Your comment</label>
+              <textarea id="rv-comment" rows="4" maxlength="@MaxLen" placeholder="Tell others about your experience…"
+                        value="@comment" @oninput="e => comment = e.Value?.ToString() ?? string.Empty"
+                        aria-invalid="@(Err("comment") is null ? "false" : "true")"
+                        class="@Ui.FieldBase resize-y @(Err("comment") is null ? "border-transparent" : "border-red-600/70")"></textarea>
+              <div class="mt-1.5 flex items-start justify-between gap-3">
+                <p class="text-[12.5px] font-medium text-red-700" role="alert">@Err("comment")</p>
+                <span class="shrink-0 text-[12.5px] font-medium text-[#6b5d52]">@comment.Length / @MaxLen</span>
+              </div>
+            </div>
+
+            <button type="submit" class="@Ui.BtnDarkLg w-full">Submit review</button>
+          </form>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEW LIST ===================== -->
+@{ var shown = Visible.ToList(); }
+<section class="py-16">
+  <div class="@Ui.Wrap">
+    <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h2 class="text-[24px] font-extrabold tracking-[-0.02em]">What people are saying</h2>
+        <p class="mt-1 text-sm font-semibold text-[#6b5d52]" aria-live="polite">
+          Showing @shown.Count of @reviews.Count @(reviews.Count == 1 ? "review" : "reviews")@(FilterStar > 0 ? $" · {FilterStar}-star only" : "")
+        </p>
+      </div>
+      <div class="flex items-center gap-3">
+        @if (FilterStar > 0)
+        {
+          <button type="button" class="@Ui.BtnLight !px-4 !py-2.5 !text-[13px]" @onclick="() => FilterStar = 0">Clear filter</button>
+        }
+        <label class="flex items-center gap-2 rounded-xl bg-[#faf4ef] px-4 py-2.5 text-[13px] font-semibold focus-within:ring-4 focus-within:ring-[#c8703a]/20">
+          <span class="text-[#6b5d52]">Sort by</span>
+          <select @bind="SortBy" class="cursor-pointer bg-transparent font-bold outline-none">
+            <option value="newest">Newest</option>
+            <option value="high">Highest rated</option>
+            <option value="low">Lowest rated</option>
+            <option value="helpful">Most helpful</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    @if (shown.Count == 0)
+    {
+      <div class="rounded-2xl bg-[#e7d3bc] px-6 py-14 text-center">
+        <p class="text-lg font-bold">No reviews to show</p>
+        <p class="@Ui.Muted mb-6 mt-1">@(reviews.Count == 0 ? "Be the first to share your experience." : "No reviews match that star rating.")</p>
+        @if (FilterStar > 0)
+        {
+          <button type="button" class="@Ui.BtnDark" @onclick="() => FilterStar = 0">Show all reviews</button>
+        }
+      </div>
+    }
+    else
+    {
+      <div class="grid gap-5 md:grid-cols-2">
+        @foreach (var r in shown)
+        {
+          var rv = r;
+          <article class="@Ui.Lift flex flex-col rounded-2xl bg-[#e7d3bc] p-6">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex gap-0.5 text-[#c8703a]" role="img" aria-label="@rv.Rating out of 5 stars">
+                @for (var i = 1; i <= 5; i++)
+                {
+                  <Icon Name="star" Fill="@(i <= rv.Rating)" Class="size-[18px]" />
+                }
+              </div>
+              <span class="text-xs font-semibold text-[#6b5d52]">@Ago(rv.Date)</span>
+            </div>
+            <p class="mt-4 flex-1 text-[15px] font-medium leading-[1.65]">@rv.Text</p>
+            <div class="mt-5 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="grid size-10 place-items-center rounded-full bg-[#241812] text-sm font-bold text-white">@Initials(rv.Name)</span>
+                <span class="text-[14.5px] font-bold">@rv.Name</span>
+              </div>
+              <button type="button" @onclick="() => ToggleHelpful(rv)" aria-pressed="@(rv.MarkedHelpful ? "true" : "false")"
+                      class="inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 text-[12.5px] font-bold transition @(rv.MarkedHelpful ? "bg-[#241812] text-white" : "bg-white text-[#241812] hover:text-[#c8703a]")">
+                <Icon Name="check" Class="size-3.5" />Helpful · @rv.Helpful
+              </button>
+            </div>
+          </article>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-[#e7d3bc] py-6">
+  <div class="@Ui.Wrap flex flex-col items-center justify-between gap-3 text-[12.5px] font-medium text-[#6b5d52] sm:flex-row">
+    <span>© @DateTime.Now.Year Hearthstone. All rights reserved.</span>
+    <a href="#top" class="inline-flex items-center gap-1.5 font-semibold text-gray-500 transition hover:text-[#241812]">Back to top <Icon Name="arrow-up" Class="size-3.5" /></a>
+  </div>
+</footer>
+
+</div>
+
+@code {
+    const int MaxLen = 500;
+    static readonly string[] Labels = { "Select a rating", "Poor", "Fair", "Good", "Very good", "Excellent" };
+
+    class Review
+    {
+        public string Name { get; init; } = "";
+        public int Rating { get; init; }
+        public string Text { get; init; } = "";
+        public DateTime Date { get; init; }
+        public int Helpful { get; set; }
+        public bool MarkedHelpful { get; set; }
+    }
+
+    // Form state
+    int rating, hover;
+    string name = "", comment = "";
+    bool submitted;
+    readonly Dictionary<string, string> errors = new();
+
+    // List state
+    int FilterStar;
+    string SortBy = "newest";
+
+    string? Err(string key) => errors.GetValueOrDefault(key);
+
+    double Average => reviews.Count == 0 ? 0 : reviews.Average(r => r.Rating);
+
+    IEnumerable<Review> Visible
+    {
+        get
+        {
+            var q = reviews.Where(r => FilterStar == 0 || r.Rating == FilterStar);
+            return SortBy switch
+            {
+                "high" => q.OrderByDescending(r => r.Rating).ThenByDescending(r => r.Date),
+                "low" => q.OrderBy(r => r.Rating).ThenByDescending(r => r.Date),
+                "helpful" => q.OrderByDescending(r => r.Helpful).ThenByDescending(r => r.Date),
+                _ => q.OrderByDescending(r => r.Date),
+            };
+        }
+    }
+
+    void Submit()
+    {
+        errors.Clear();
+        if (rating == 0) errors["rating"] = "Please choose a star rating.";
+        if (name.Trim().Length < 2) errors["name"] = "Enter your name.";
+        if (comment.Trim().Length < 10) errors["comment"] = "Please write at least 10 characters.";
+        if (errors.Count > 0) return;
+
+        // TODO: send the review to your backend / database
+        reviews.Add(new Review { Name = name.Trim(), Rating = rating, Text = comment.Trim(), Date = DateTime.Now });
+
+        rating = hover = 0;
+        name = comment = "";
+        FilterStar = 0;
+        SortBy = "newest";
+        submitted = true;
+    }
+
+    static void ToggleHelpful(Review r)
+    {
+        r.MarkedHelpful = !r.MarkedHelpful;
+        r.Helpful += r.MarkedHelpful ? 1 : -1;
+    }
+
+    static string Initials(string n) => string.Concat(n.Split(' ', StringSplitOptions.RemoveEmptyEntries).Take(2).Select(p => char.ToUpper(p[0])));
+
+    static string Ago(DateTime d)
+    {
+        var span = DateTime.Now - d;
+        if (span.TotalMinutes < 1) return "Just now";
+        if (span.TotalHours < 1) return $"{(int)span.TotalMinutes} min ago";
+        if (span.TotalDays < 1) return $"{(int)span.TotalHours} hr ago";
+        if (span.TotalDays < 30) return $"{(int)span.TotalDays} {((int)span.TotalDays == 1 ? "day" : "days")} ago";
+        return d.ToString("MMM d, yyyy");
+    }
+
+    // Sample data (in-memory only, resets on refresh)
+    readonly List<Review> reviews = new()
+    {
+        new() { Name = "Sarah Nguyen", Rating = 5, Date = DateTime.Now.AddDays(-2), Helpful = 12, Text = "Hearthstone truly cares about their clients. They listened to my needs and helped me find the perfect home in the Bay Area." },
+        new() { Name = "Michael Rodriguez", Rating = 4, Date = DateTime.Now.AddDays(-9), Helpful = 7, Text = "Great personalized service and a very smooth process. I would have liked a few more listing photos, but overall a fantastic experience." },
+        new() { Name = "Emily Johnson", Rating = 5, Date = DateTime.Now.AddDays(-21), Helpful = 9, Text = "Made my dream of owning a home a reality! The team guided me through every step and answered all my questions." },
+        new() { Name = "David Park", Rating = 3, Date = DateTime.Now.AddDays(-35), Helpful = 3, Text = "Good selection of homes, though tour scheduling took a couple of days to confirm. Agents were friendly once we got going." },
+        new() { Name = "Priya Shah", Rating = 5, Date = DateTime.Now.AddDays(-48), Helpful = 5, Text = "Transparent, honest, and responsive. I always knew where I stood in the buying process." },
+    };
+}

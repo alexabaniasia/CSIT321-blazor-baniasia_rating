@@ -27,3 +27,35 @@ Z:\L23Y16W36\Hearthstone\Hearthstone\obj\Debug\net8.0\Hearthstone.pdb
 Z:\L23Y16W36\Hearthstone\Hearthstone\obj\Debug\net8.0\Hearthstone.genruntimeconfig.cache
 Z:\L23Y16W36\Hearthstone\Hearthstone\obj\Debug\net8.0\ref\Hearthstone.dll
 Z:\L23Y16W36\Hearthstone\Hearthstone\obj\Debug\net8.0\Hearthstone.sourcelink.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\bin\Debug\net8.0\appsettings.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\bin\Debug\net8.0\Hearthstone.staticwebassets.runtime.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\bin\Debug\net8.0\Hearthstone.staticwebassets.endpoints.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\bin\Debug\net8.0\Hearthstone.exe
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\bin\Debug\net8.0\Hearthstone.deps.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\bin\Debug\net8.0\Hearthstone.runtimeconfig.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\bin\Debug\net8.0\Hearthstone.dll
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\bin\Debug\net8.0\Hearthstone.pdb
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\Hearthstone.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\Hearthstone.AssemblyInfoInputs.cache
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\Hearthstone.AssemblyInfo.cs
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\Hearthstone.csproj.CoreCompileInputs.cache
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\Hearthstone.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\Hearthstone.sourcelink.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\scopedcss\bundle\Hearthstone.styles.css
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\scopedcss\projectbundle\Hearthstone.bundle.scp.css
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\Hearthstone.dll
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\refint\Hearthstone.dll
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\Hearthstone.pdb
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\Hearthstone.genruntimeconfig.cache
+C:\Users\Rea Emerald\OneDrive\Documents\App Dev\CSIT321-blazor\obj\Debug\net8.0\ref\Hearthstone.dll
