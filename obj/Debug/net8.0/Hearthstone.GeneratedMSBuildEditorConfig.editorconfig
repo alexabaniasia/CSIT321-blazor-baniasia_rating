@@ -27,20 +27,12 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/AuthLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoTGF5b3V0LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/FormField.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGb3JtRmllbGQucmF6b3I=
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Layout/AuthLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcQXV0aExheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/Icon.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJY29uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/Login.razor]
@@ -55,12 +47,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZXZpZXdzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Pages/Ui.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVaS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Shared/FormField.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcRm9ybUZpZWxkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Shared/Icon.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcSWNvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/Shared/Ui.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcVWkucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Rea Emerald/OneDrive/Documents/App Dev/CSIT321-blazor/Components/_Imports.razor]
